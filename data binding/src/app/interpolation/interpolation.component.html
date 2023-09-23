@@ -12,8 +12,16 @@
         type="search"
         placeholder="Name of student..."
         aria-label="Name"
-        [value]="searchText"
+        [value]="searchStudentName"
         (input)="handleSearch($event)"
+      />
+    </div>
+    <div class="col-12 col-lg-4">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Name of student father..."
+        aria-label="Name"
       />
     </div>
   </div>

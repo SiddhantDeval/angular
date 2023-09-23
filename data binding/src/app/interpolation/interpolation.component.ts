@@ -15,7 +15,7 @@ export class InterpolationComponent {
     'dark',
   ];
   totalStudents = data.length;
-  searchText = '';
+  searchStudentName = '';
   getTransformedData = () =>
     data.map((item) => ({
       ...item,
@@ -37,7 +37,7 @@ export class InterpolationComponent {
   };
   handleSearch = (event: Event) => {
     const { value } = event.target as HTMLInputElement;
-    this.searchText = value;
+    this.searchStudentName = value;
     console.log(value);
     this.getfilteredStudentByName(value);
   };
