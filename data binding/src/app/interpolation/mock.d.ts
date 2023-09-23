@@ -4,6 +4,8 @@ type Student = {
   physics: number;
   maths: number;
   english: number;
+  father: string;
+  phone: string;
   color: string;
 };
 export { Student };

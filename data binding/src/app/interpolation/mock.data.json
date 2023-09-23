@@ -4,97 +4,125 @@
     "gender": "Male",
     "physics": 88,
     "maths": 87,
-    "english": 78
+    "english": 78,
+    "father": "Terry Medhurst",
+    "phone": "+63 791 675 8914"
   },
   {
     "name": "rajesh",
     "gender": "Male",
     "physics": 96,
     "maths": 100,
-    "english": 95
+    "english": 95,
+    "father": "Sheldon Quigley",
+    "phone": "+7 813 117 7139"
   },
   {
     "name": "moorthy",
     "gender": "Male",
     "physics": 89,
     "maths": 90,
-    "english": 70
+    "english": 70,
+    "father": "Terrill Hills",
+    "phone": "+63 739 292 7942"
   },
   {
     "name": "raja",
     "gender": "Male",
     "physics": 30,
     "maths": 25,
-    "english": 40
+    "english": 40,
+    "father": "Miles Cummerata",
+    "phone": "+86 461 145 4186"
   },
   {
     "name": "usha",
     "gender": "Female",
     "physics": 67,
     "maths": 45,
-    "english": 78
+    "english": 78,
+    "father": "Mavis Schultz",
+    "phone": "+372 285 771 1911"
   },
   {
     "name": "priya",
     "gender": "Female",
     "physics": 56,
     "maths": 46,
-    "english": 78
+    "english": 78,
+    "father": "Alison Reichert",
+    "phone": "+351 527 735 3642"
   },
   {
     "name": "Sundar",
     "gender": "Male",
     "physics": 12,
     "maths": 67,
-    "english": 67
+    "english": 67,
+    "father": "Oleta Abbott",
+    "phone": "+62 640 802 7111"
   },
   {
     "name": "Kavitha",
     "gender": "Female",
     "physics": 78,
     "maths": 71,
-    "english": 67
+    "english": 67,
+    "father": "Ewell Mueller",
+    "phone": "+86 946 297 2275"
   },
   {
     "name": "Dinesh",
     "gender": "Male",
     "physics": 56,
     "maths": 45,
-    "english": 67
+    "english": 67,
+    "father": "Demetrius Corkery",
+    "phone": "+86 356 590 9727"
   },
   {
     "name": "Hema",
     "gender": "Female",
     "physics": 71,
     "maths": 90,
-    "english": 23
+    "english": 23,
+    "father": "Eleanora Price",
+    "phone": "+60 184 408 0824"
   },
   {
     "name": "Gowri",
     "gender": "Female",
     "physics": 100,
     "maths": 100,
-    "english": 100
+    "english": 100,
+    "father": "Marcel Jones",
+    "phone": "+967 253 210 0344"
   },
   {
     "name": "Ram",
     "gender": "Male",
     "physics": 78,
     "maths": 55,
-    "english": 47
+    "english": 47,
+    "father": "Assunta Rath",
+    "phone": "+380 962 542 6549"
   },
   {
     "name": "Murugan",
     "gender": "Male",
     "physics": 34,
     "maths": 89,
-    "english": 78
+    "english": 78,
+    "father": "Trace Douglas",
+    "phone": "+1 609 937 3468"
   },
   {
     "name": "Jenifer",
     "gender": "Female",
     "physics": 67,
     "maths": 88,
-    "english": 90
+    "english": 90,
+    "father": "Enoch Lynch",
+    "phone": "+94 912 100 5118"
   }
 ]
