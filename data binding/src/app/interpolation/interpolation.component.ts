@@ -8,7 +8,12 @@ import { Student } from './mock';
 })
 export class InterpolationComponent {
   studentList: Student[] | [] = [];
-  color = ['primary', 'secondary', 'warning', 'light', 'dark'];
+  color = [
+    // 'primary',  'warning',
+    'secondary',
+    'light',
+    'dark',
+  ];
   totalStudents = data.length;
   getTransformedData = () =>
     data.map((item) => ({
