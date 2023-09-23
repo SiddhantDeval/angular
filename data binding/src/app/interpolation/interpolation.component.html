@@ -8,15 +8,14 @@
     </div>
     <div class="col-5">
       <div class="container-fluid">
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Name of student..."
-            aria-label="Name"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Name of student..."
+          aria-label="Name"
+          [value]="searchText"
+          (input)="handleSearch($event)"
+        />
       </div>
     </div>
 

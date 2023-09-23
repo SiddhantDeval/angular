@@ -15,6 +15,7 @@ export class InterpolationComponent {
     'dark',
   ];
   totalStudents = data.length;
+  searchText = '';
   getTransformedData = () =>
     data.map((item) => ({
       ...item,
@@ -22,7 +23,22 @@ export class InterpolationComponent {
     }));
   getRndmColor = () =>
     this.color[Math.floor(Math.random() * this.color.length)];
+
   ngOnInit() {
     this.studentList = this.getTransformedData();
   }
+
+  getfilteredStudentByName = (text: string) => {
+    if (text == '') this.studentList = this.getTransformedData();
+    else
+      this.studentList = this.studentList.filter((stu) =>
+        stu.name.toLowerCase().includes(text)
+      );
+  };
+  handleSearch = (event: Event) => {
+    const { value } = event.target as HTMLInputElement;
+    this.searchText = value;
+    console.log(value);
+    this.getfilteredStudentByName(value);
+  };
 }
