@@ -1,0 +1,60 @@
+<div class="row align-items-center gy-3">
+  <div class="col-12 col-lg-4">
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Name of student..."
+      aria-label="Name"
+      [value]="searchStudentName"
+      (input)="handleSearch($event)"
+    />
+  </div>
+  <div class="col-12 col-lg-4">
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Name of father..."
+      aria-label="Name"
+      [(ngModel)]="searchFatherName"
+      (ngModelChange)="handleFatherSearch($event)"
+    />
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-check form-check-inline">
+      <input
+        checked
+        class="form-check-input"
+        type="radio"
+        id="all-students"
+        value="all"
+        name="gender"
+        (click)="handleGender($event)"
+      />
+      <label class="form-check-label fw-semibold" for="all-students"
+        >All students</label
+      >
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        id="male"
+        value="male"
+        name="gender"
+        (click)="handleGender($event)"
+      />
+      <label class="form-check-label fw-semibold" for="male">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        id="female"
+        value="female"
+        name="gender"
+        (click)="handleGender($event)"
+      />
+      <label class="form-check-label fw-semibold" for="female">Female</label>
+    </div>
+  </div>
+</div>
