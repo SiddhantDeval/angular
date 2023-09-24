@@ -19,45 +19,45 @@ export class StudentFiltersComponent {
   emitCustomEventProviderStudentList = () => {
     this.customEventProviderStudentList.emit(this.filterStudents);
   };
+  filter = () => {
+    let filteredStudentList = this.students;
 
-  getfilteredStudentByName = (text: string) => {
-    if (text == '') this.filterStudents = this.students;
-    else
-      this.filterStudents = this.filterStudents.filter((stu) =>
-        stu.name.toLowerCase().includes(text)
+    if (this.searchStudentName != '') {
+      filteredStudentList = filteredStudentList.filter((stu) =>
+        stu.name.toLowerCase().includes(this.searchStudentName)
       );
-  };
-  getfilteredStudentByFatherName = (text: string) => {
-    if (text == '') this.filterStudents = this.students;
-    else
-      this.filterStudents = this.filterStudents.filter((stu) =>
-        stu.father.toLowerCase().includes(text)
-      );
-  };
-  getfilteredStudentByGender = (text: string) => {
-    if (text == 'all') this.filterStudents = this.students;
-    else {
-      this.filterStudents = (
-        !this.searchStudentName && !this.searchFatherName
-          ? this.students
-          : this.filterStudents
-      ).filter((stu) => stu.gender.toLowerCase() == text);
     }
+    if (this.searchFatherName != '') {
+      filteredStudentList = filteredStudentList.filter((stu) =>
+        stu.father.toLowerCase().includes(this.searchFatherName)
+      );
+    }
+    if (this.selectedGender != 'all') {
+      filteredStudentList = filteredStudentList.filter(
+        (stu) => stu.gender.toLowerCase() == this.selectedGender
+      );
+    }
+    this.filterStudents = filteredStudentList;
   };
+
   handleSearch = (event: Event) => {
     const { value } = event.target as HTMLInputElement;
     this.searchStudentName = value;
-    this.getfilteredStudentByName(value);
+    this.filter();
+    // custom event emmiter called
     this.emitCustomEventProviderStudentList();
   };
   handleFatherSearch = (value: string) => {
-    this.getfilteredStudentByFatherName(value);
+    // two way data binding
+    this.filter();
+    // custom event emmiter called
     this.emitCustomEventProviderStudentList();
   };
   handleGender = (event: Event) => {
     const { value } = event.target as HTMLInputElement;
     this.selectedGender = value;
-    this.getfilteredStudentByGender(value);
+    this.filter();
+    // custom event emmiter called
     this.emitCustomEventProviderStudentList();
   };
 }
