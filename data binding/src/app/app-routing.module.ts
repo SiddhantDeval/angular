@@ -1,10 +1,10 @@
+import { StudentsListComponent } from './students-list/students-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InterpolationComponent } from './interpolation/interpolation.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/interpolation', pathMatch: 'full' },
-  { path: 'interpolation', component: InterpolationComponent },
+  { path: '', redirectTo: '/students-report', pathMatch: 'full' },
+  { path: 'students-report', component: StudentsListComponent },
 ];
 
 @NgModule({

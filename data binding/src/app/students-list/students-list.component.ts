@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import data from './mock.data.json';
 import { Student } from './mock';
+
 @Component({
-  selector: 'app-interpolation',
-  templateUrl: './interpolation.component.html',
-  styleUrls: ['./interpolation.component.css'],
+  selector: 'app-students-list',
+  templateUrl: './students-list.component.html',
+  styleUrls: ['./students-list.component.css'],
 })
-export class InterpolationComponent {
+export class StudentsListComponent {
   studentList: Student[] | [] = [];
   InitData: Student[] | [] = [];
   color = [
