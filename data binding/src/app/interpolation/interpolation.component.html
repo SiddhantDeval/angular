@@ -20,8 +20,10 @@
       <input
         class="form-control me-2"
         type="search"
-        placeholder="Name of student father..."
+        placeholder="Name of father..."
         aria-label="Name"
+        [(ngModel)]="searchFatherName"
+        (ngModelChange)="handleFatherSearch($event)"
       />
     </div>
   </div>

@@ -8,6 +8,7 @@ import { Student } from './mock';
 })
 export class InterpolationComponent {
   studentList: Student[] | [] = [];
+  InitData: Student[] | [] = [];
   color = [
     // 'primary',  'warning',
     'secondary',
@@ -16,6 +17,7 @@ export class InterpolationComponent {
   ];
   totalStudents = data.length;
   searchStudentName = '';
+  searchFatherName = '';
   getTransformedData = () =>
     data.map((item) => ({
       ...item,
@@ -25,20 +27,29 @@ export class InterpolationComponent {
     this.color[Math.floor(Math.random() * this.color.length)];
 
   ngOnInit() {
-    this.studentList = this.getTransformedData();
+    this.InitData = this.studentList = this.getTransformedData();
   }
 
   getfilteredStudentByName = (text: string) => {
-    if (text == '') this.studentList = this.getTransformedData();
+    if (text == '') this.studentList = this.InitData;
     else
-      this.studentList = this.studentList.filter((stu) =>
+      this.studentList = this.InitData.filter((stu) =>
         stu.name.toLowerCase().includes(text)
+      );
+  };
+  getfilteredStudentByFatherName = (text: string) => {
+    if (text == '') this.studentList = this.InitData;
+    else
+      this.studentList = this.InitData.filter((stu) =>
+        stu.father.toLowerCase().includes(text)
       );
   };
   handleSearch = (event: Event) => {
     const { value } = event.target as HTMLInputElement;
     this.searchStudentName = value;
-    console.log(value);
     this.getfilteredStudentByName(value);
+  };
+  handleFatherSearch = (value: string) => {
+    this.getfilteredStudentByFatherName(value);
   };
 }
