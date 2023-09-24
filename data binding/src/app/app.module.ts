@@ -9,9 +9,11 @@ import { StudentComponent } from './students-list/student/student.component';
 import { StudentCardBodyComponent } from './students-list/student/student-card-body/student-card-body.component';
 import { StudentCardHeaderComponent } from './students-list/student/student-card-header/student-card-header.component';
 import { StudentFiltersComponent } from './students-list/student-filters/student-filters.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './products/product/product.component';
 
 @NgModule({
-  declarations: [AppComponent, StudentsListComponent, StudentComponent, StudentCardBodyComponent, StudentCardHeaderComponent, StudentFiltersComponent],
+  declarations: [AppComponent, StudentsListComponent, StudentComponent, StudentCardBodyComponent, StudentCardHeaderComponent, StudentFiltersComponent, ProductsComponent, ProductComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

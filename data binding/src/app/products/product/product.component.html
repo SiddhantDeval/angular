@@ -1,0 +1,20 @@
+<div class="col">
+  <div class="card">
+    <img
+      [src]="product.images[0]"
+      class="card-img-top img-fluid object-fit-fill"
+      [ngStyle]="{ maxHeight: '300px' }"
+      [alt]="product.title"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">
+        {{ product.description }}
+      </p>
+      <div class="d-flex g-4">
+        <div class="card-text">Price : 34</div>
+        <div class="card-text">Price : 34</div>
+      </div>
+    </div>
+  </div>
+</div>
