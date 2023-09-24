@@ -29,6 +29,7 @@
         value="all"
         name="gender"
         (click)="handleGender($event)"
+        [disabled]="this.searchStudentName || this.searchFatherName"
       />
       <label class="form-check-label fw-semibold" for="all-students"
         >All students</label

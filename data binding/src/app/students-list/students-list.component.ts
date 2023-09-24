@@ -10,6 +10,7 @@ import { Student } from './mock';
 export class StudentsListComponent {
   studentList: Student[] | [] = [];
   InitData: Student[] | [] = [];
+  totalStudents = 0;
   color = [
     // 'primary',  'warning',
     'secondary',
@@ -24,8 +25,10 @@ export class StudentsListComponent {
     }));
   ngOnInit() {
     this.InitData = this.studentList = this.getTransformedData();
+    this.totalStudents = this.InitData.length;
   }
   customEventConsumerFilteredStudents = (students: Student[]) => {
     this.studentList = students;
+    this.totalStudents = students.length;
   };
 }

@@ -9,9 +9,7 @@ import { Student } from '../mock';
 export class StudentFiltersComponent {
   @Input()
   students: Student[] | [] = [];
-
   filterStudents: Student[] | [] = this.students;
-  totalStudents = this.filterStudents.length;
   searchStudentName = '';
   searchFatherName = '';
   selectedGender = 'all';
@@ -20,29 +18,31 @@ export class StudentFiltersComponent {
   customEventProviderStudentList = new EventEmitter<Student[]>();
   emitCustomEventProviderStudentList = () => {
     this.customEventProviderStudentList.emit(this.filterStudents);
-    console.log('emit');
   };
 
   getfilteredStudentByName = (text: string) => {
     if (text == '') this.filterStudents = this.students;
     else
-      this.filterStudents = this.students.filter((stu) =>
+      this.filterStudents = this.filterStudents.filter((stu) =>
         stu.name.toLowerCase().includes(text)
       );
   };
   getfilteredStudentByFatherName = (text: string) => {
     if (text == '') this.filterStudents = this.students;
     else
-      this.filterStudents = this.students.filter((stu) =>
+      this.filterStudents = this.filterStudents.filter((stu) =>
         stu.father.toLowerCase().includes(text)
       );
   };
   getfilteredStudentByGender = (text: string) => {
     if (text == 'all') this.filterStudents = this.students;
-    else
-      this.filterStudents = this.students.filter(
-        (stu) => stu.gender.toLowerCase() == text
-      );
+    else {
+      this.filterStudents = (
+        !this.searchStudentName && !this.searchFatherName
+          ? this.students
+          : this.filterStudents
+      ).filter((stu) => stu.gender.toLowerCase() == text);
+    }
   };
   handleSearch = (event: Event) => {
     const { value } = event.target as HTMLInputElement;
