@@ -18,6 +18,7 @@ export class InterpolationComponent {
   totalStudents = data.length;
   searchStudentName = '';
   searchFatherName = '';
+  selectedGender = 'all';
   getTransformedData = () =>
     data.map((item) => ({
       ...item,
@@ -36,6 +37,7 @@ export class InterpolationComponent {
       this.studentList = this.InitData.filter((stu) =>
         stu.name.toLowerCase().includes(text)
       );
+    this.totalStudents = this.studentList.length;
   };
   getfilteredStudentByFatherName = (text: string) => {
     if (text == '') this.studentList = this.InitData;
@@ -43,6 +45,15 @@ export class InterpolationComponent {
       this.studentList = this.InitData.filter((stu) =>
         stu.father.toLowerCase().includes(text)
       );
+    this.totalStudents = this.studentList.length;
+  };
+  getfilteredStudentByGender = (text: string) => {
+    if (text == 'all') this.studentList = this.InitData;
+    else
+      this.studentList = this.InitData.filter(
+        (stu) => stu.gender.toLowerCase() == text
+      );
+    this.totalStudents = this.studentList.length;
   };
   handleSearch = (event: Event) => {
     const { value } = event.target as HTMLInputElement;
@@ -51,5 +62,11 @@ export class InterpolationComponent {
   };
   handleFatherSearch = (value: string) => {
     this.getfilteredStudentByFatherName(value);
+  };
+  handleGender = (event: Event) => {
+    const { value } = event.target as HTMLInputElement;
+    this.selectedGender = value;
+    this.getfilteredStudentByGender(value);
+    console.log(value);
   };
 }
