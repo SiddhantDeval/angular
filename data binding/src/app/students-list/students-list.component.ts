@@ -68,6 +68,5 @@ export class StudentsListComponent {
     const { value } = event.target as HTMLInputElement;
     this.selectedGender = value;
     this.getfilteredStudentByGender(value);
-    console.log(value);
   };
 }

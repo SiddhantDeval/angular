@@ -1,0 +1,46 @@
+<div class="card-body">
+  <ol class="list-group list-group-numbered">
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-semibold">Physics</div>
+      </div>
+      <span class="fs-6 badge text-bg-{{ student.color }} rounded-pill">
+        {{ student.physics }}</span
+      >
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-semibold">Maths</div>
+      </div>
+      <span class="fs-6 badge text-bg-{{ student.color }} rounded-pill">
+        {{ student.maths }}</span
+      >
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-semibold">English</div>
+      </div>
+      <span class="fs-6 badge text-bg-{{ student.color }} rounded-pill">
+        {{ student.english }}</span
+      >
+    </li>
+  </ol>
+  <div class="list-group">
+    <div
+      class="list-group-item mt-2 d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Total <span class="fw-semibold">(300)</span></div>
+      </div>
+      <span class="fs-6 fw-bold">
+        {{ student.english + student.maths + student.physics }}</span
+      >
+    </div>
+  </div>
+</div>

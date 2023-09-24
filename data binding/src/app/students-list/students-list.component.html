@@ -1,12 +1,8 @@
 <div class="container p-5">
-  <div class="row">
-    <div class="col-12 col-lg-4">
-      <p class="h2">
-        Students Report -
-        <span class="fw-light me-lg-3 me-sm-6">{{ totalStudents }}</span>
-      </p>
-    </div>
-  </div>
+  <p class="h2">
+    Students Report -
+    <span class="fw-light">{{ totalStudents }}</span>
+  </p>
   <div class="row align-items-center gy-3">
     <div class="col-12 col-lg-4">
       <input
@@ -68,92 +64,10 @@
     </div>
   </div>
   <div class="my-4 row justify-content-start">
-    <div
+    <app-student
       class="col-xs-6 col-md-6 col-lg-4 mb-3"
       *ngFor="let student of studentList"
-    >
-      <div class="card text-bg-{{ student.color }}">
-        <div
-          class="card-header text-uppercase d-flex justify-content-between align-items-center"
-        >
-          <div class="ms-2 me-auto">
-            <div class="fw-bold">{{ student.name }}</div>
-            <div class="fw-semibold">
-              <span
-                class="fw-light"
-                *ngIf="student.gender == 'Male'; else suffix"
-              >
-                S/O
-              </span>
-              <ng-template #suffix>
-                <span class="fw-light"> D/O </span>
-              </ng-template>
-              <span class="text-uppercase fw-normal">{{ student.father }}</span>
-            </div>
-            <div class="fw-lighter">
-              {{ student.phone }}
-            </div>
-          </div>
-          <span
-            class="badge rounded-pill fs-6 fw-light"
-            [ngClass]="{
-              'text-bg-danger': student.gender == 'Female',
-              'text-bg-success': student.gender == 'Male'
-            }"
-          >
-            {{ student.gender }}</span
-          >
-        </div>
-
-        <div class="card-body">
-          <ol class="list-group list-group-numbered">
-            <li
-              class="list-group-item d-flex justify-content-between align-items-start"
-            >
-              <div class="ms-2 me-auto">
-                <div class="fw-semibold">Physics</div>
-              </div>
-              <span class="fs-6 badge text-bg-{{ student.color }} rounded-pill">
-                {{ student.physics }}</span
-              >
-            </li>
-            <li
-              class="list-group-item d-flex justify-content-between align-items-start"
-            >
-              <div class="ms-2 me-auto">
-                <div class="fw-semibold">Maths</div>
-              </div>
-              <span class="fs-6 badge text-bg-{{ student.color }} rounded-pill">
-                {{ student.maths }}</span
-              >
-            </li>
-            <li
-              class="list-group-item d-flex justify-content-between align-items-start"
-            >
-              <div class="ms-2 me-auto">
-                <div class="fw-semibold">English</div>
-              </div>
-              <span class="fs-6 badge text-bg-{{ student.color }} rounded-pill">
-                {{ student.english }}</span
-              >
-            </li>
-          </ol>
-          <div class="list-group">
-            <div
-              class="list-group-item mt-2 d-flex justify-content-between align-items-start"
-            >
-              <div class="ms-2 me-auto">
-                <div class="fw-bold">
-                  Total <span class="fw-semibold">(300)</span>
-                </div>
-              </div>
-              <span class="fs-6 fw-bold">
-                {{ student.english + student.maths + student.physics }}</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      [student]="student"
+    />
   </div>
 </div>

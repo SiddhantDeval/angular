@@ -1,0 +1,28 @@
+<div
+  class="card-header text-uppercase d-flex justify-content-between align-items-center"
+>
+  <div class="ms-2 me-auto">
+    <div class="fw-bold">{{ student.name }}</div>
+    <div class="fw-semibold">
+      <span class="fw-light" *ngIf="student.gender == 'Male'; else suffix">
+        S/O
+      </span>
+      <ng-template #suffix>
+        <span class="fw-light"> D/O </span>
+      </ng-template>
+      <span class="text-uppercase fw-normal">{{ student.father }}</span>
+    </div>
+    <div class="fw-lighter">
+      {{ student.phone }}
+    </div>
+  </div>
+  <span
+    class="badge rounded-pill fs-6 fw-light"
+    [ngClass]="{
+      'text-bg-danger': student.gender == 'Female',
+      'text-bg-success': student.gender == 'Male'
+    }"
+  >
+    {{ student.gender }}</span
+  >
+</div>
