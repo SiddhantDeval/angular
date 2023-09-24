@@ -49,6 +49,11 @@
     </div>
   </div>
 </nav>
-<div class="app-main">
+<div
+  [ngStyle]="{
+    backgroundImage: 'url(/assets/background.jpg)',
+    minHeight: '100vh'
+  }"
+>
   <router-outlet></router-outlet>
 </div>
