@@ -10,8 +10,10 @@ import { StudentCardBodyComponent } from './students-list/student/student-card-b
 import { StudentCardHeaderComponent } from './students-list/student/student-card-header/student-card-header.component';
 import { StudentFiltersComponent } from './students-list/student-filters/student-filters.component';
 import { ProductsComponent } from './products/products.component';
-import { ProductComponent } from './products/product/product.component';
+import { ProductComponent } from './products/product-list/product/product.component';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { ProductModalComponent } from './products/product-modal/product-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,9 @@ import { ProductFilterComponent } from './products/product-filter/product-filter
     ProductsComponent,
     ProductComponent,
     ProductFilterComponent,
+    ProductModalComponent,
+    ProductsComponent,
+    ProductListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

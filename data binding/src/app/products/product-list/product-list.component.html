@@ -1,0 +1,9 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <product
+    *ngFor="let product of products"
+    [product]="product"
+    data-bs-toggle="modal"
+    data-bs-target="#product-detail-modal"
+    (click)="selectedProduct = product"
+  />
+</div>

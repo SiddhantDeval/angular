@@ -1,0 +1,46 @@
+<div class="col">
+  <div class="card">
+    <img
+      [src]="product.images[0]"
+      class="card-img-top img-fluid object-fit-fill"
+      [ngStyle]="{ maxHeight: '300px' }"
+      [alt]="product.title"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">
+        {{ product.description }}
+      </p>
+      <div class="d-flex justify-content-between">
+        <div class="card-text text-secondary">
+          Category
+          <p class="text-dark fw-semibold">{{ product.category }}</p>
+        </div>
+        <div class="card-text text-secondary">
+          Brand
+          <p class="text-dark fw-semibold">
+            {{ product.brand }}
+          </p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="card-text text-secondary">
+          Rating
+          <p class="text-dark fw-semibold">
+            {{ product.rating }}
+          </p>
+        </div>
+        <div class="card-text text-secondary">
+          Price
+          <p class="text-dark fw-semibold">${{ product.price }}</p>
+        </div>
+        <div class="card-text text-secondary">
+          Discount
+          <p class="text-dark fw-semibold">
+            {{ product.discountPercentage }} %
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
