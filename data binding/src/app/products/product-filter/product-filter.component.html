@@ -1,0 +1,66 @@
+<div class="row align-items-center my-4 g-3">
+  <div class="col-12 col-lg-4">
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Name of student..."
+      aria-label="Name"
+    />
+  </div>
+  <div class="col-12 col-lg-4">
+    <label for="customRange1" class="form-label"
+      >Price range -
+      <span class="text-secondary">{{ selectedPrice }}</span></label
+    >
+    <input
+      aria-details="refernece variable"
+      type="range"
+      class="form-range"
+      id="price-range"
+      [min]="minPrice"
+      [max]="maxPrice"
+      [value]="0"
+      #selectPrice
+      (click)="handlePriceFilter(selectPrice)"
+    />
+    <div class="d-flex justify-content-between">
+      <span>{{ minPrice }}</span>
+      <span>{{ maxPrice }}</span>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-check form-check-inline">
+      <input
+        checked
+        class="form-check-input"
+        type="radio"
+        id="all-students"
+        value="all"
+        name="gender"
+      />
+      <label class="form-check-label fw-semibold" for="all-students"
+        >All students</label
+      >
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        id="male"
+        value="male"
+        name="gender"
+      />
+      <label class="form-check-label fw-semibold" for="male">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        id="female"
+        value="female"
+        name="gender"
+      />
+      <label class="form-check-label fw-semibold" for="female">Female</label>
+    </div>
+  </div>
+</div>

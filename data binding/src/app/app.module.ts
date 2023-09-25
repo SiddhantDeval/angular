@@ -11,9 +11,20 @@ import { StudentCardHeaderComponent } from './students-list/student/student-card
 import { StudentFiltersComponent } from './students-list/student-filters/student-filters.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 
 @NgModule({
-  declarations: [AppComponent, StudentsListComponent, StudentComponent, StudentCardBodyComponent, StudentCardHeaderComponent, StudentFiltersComponent, ProductsComponent, ProductComponent],
+  declarations: [
+    AppComponent,
+    StudentsListComponent,
+    StudentComponent,
+    StudentCardBodyComponent,
+    StudentCardHeaderComponent,
+    StudentFiltersComponent,
+    ProductsComponent,
+    ProductComponent,
+    ProductFilterComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
