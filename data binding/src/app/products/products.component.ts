@@ -9,4 +9,5 @@ import dummyProducts from './mock-data.json';
 })
 export class ProductsComponent {
   products: Product[] = dummyProducts;
+  selectedProduct: Product;
 }

@@ -3,8 +3,8 @@
     Products -
     <span class="fw-light">{{ products.length }}</span>
   </p>
-  <product-filter [products]="products"></product-filter>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <product *ngFor="let product of products" [product]="product" />
-  </div>
+  <product-filter [products]="products" />
+  <!--ProductListComponentReference -->
+  <product-list [products]="products" #ProductListComponentReference />
+  <product-modal [product]="ProductListComponentReference.selectedProduct" />
 </div>
