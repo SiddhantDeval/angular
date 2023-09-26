@@ -6,5 +6,8 @@
   <product-filter [products]="products" />
   <!--ProductListComponentReference -->
   <product-list [products]="products" #ProductListComponentReference />
-  <product-modal [product]="ProductListComponentReference.selectedProduct" />
+  <product-modal
+    *ngIf="ProductListComponentReference.selectedProduct"
+    [product]="ProductListComponentReference.selectedProduct"
+  />
 </div>
