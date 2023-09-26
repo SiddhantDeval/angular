@@ -14,6 +14,8 @@ import { ProductComponent } from './products/product-list/product/product.compon
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductModalComponent } from './products/product-modal/product-modal.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { ProductModalComponent } from './products/product-modal/product-modal.co
     ProductListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: environment.baseHref }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -26,6 +26,27 @@
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.js"]
           },
           "configurations": {
+            "ghpage": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ghpage.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "production": {
               "budgets": [
                 {
@@ -41,6 +62,7 @@
               ],
               "outputHashing": "all"
             },
+
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -57,6 +79,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular:build:production"
+            },
+            "ghpage": {
+              "browserTarget": "angular:build:ghpage"
             },
             "development": {
               "browserTarget": "angular:build:development"
