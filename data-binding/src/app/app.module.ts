@@ -33,7 +33,8 @@ import { environment } from 'src/environments/environment';
     ProductListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [{ provide: APP_BASE_HREF, useValue: environment.baseHref }],
+  // providers: [{ provide: APP_BASE_HREF, useValue: environment.baseHref }],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
