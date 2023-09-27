@@ -24,17 +24,17 @@ export class StudentFiltersComponent {
 
     if (this.searchStudentName != '') {
       filteredStudentList = filteredStudentList.filter((stu) =>
-        stu.name.toLowerCase().includes(this.searchStudentName)
+        stu.name.toLowerCase().includes(this.searchStudentName),
       );
     }
     if (this.searchFatherName != '') {
       filteredStudentList = filteredStudentList.filter((stu) =>
-        stu.father.toLowerCase().includes(this.searchFatherName)
+        stu.father.toLowerCase().includes(this.searchFatherName),
       );
     }
     if (this.selectedGender != 'all') {
       filteredStudentList = filteredStudentList.filter(
-        (stu) => stu.gender.toLowerCase() == this.selectedGender
+        (stu) => stu.gender.toLowerCase() == this.selectedGender,
       );
     }
     this.filterStudents = filteredStudentList;

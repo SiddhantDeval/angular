@@ -9,57 +9,88 @@
           <a
             class="nav-link active fw-bold text-primary"
             aria-current="page"
+            routerLink="/"
+            >Students</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active fw-bold text-primary"
+            aria-current="page"
             routerLink="/products"
             >Products</a
           >
         </li>
         <li class="nav-item">
           <a
-            class="nav-link active"
+            class="nav-link active fw-bold text-primary"
             aria-current="page"
-            routerLink="/students-report"
-            >Interpolation</a
+            routerLink="/registration"
+            >Registration</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <a
-            class="nav-link active"
-            aria-current="page"
-            routerLink="/students-report"
-            >Event binding</a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
           >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            routerLink="/students-report"
-            >Two way data binding (ngModel)</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            routerLink="/students-report"
-            >Custom event emmiter</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            routerLink="/students-report"
-            >*ngIf</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            routerLink="/students-report"
-            >*ngFor</a
-          >
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink="/students-report"
+              >Event binding</a
+            >
+
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink="/students-report"
+              >Two way data binding (ngModel)</a
+            >
+
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink="/students-report"
+              >Custom event emmiter</a
+            >
+
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink="/students-report"
+              >*ngIf</a
+            >
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink="/students-report"
+              >*ngFor</a
+            >
+
+            <a class="nav-link active" aria-current="page" routerLink="/product"
+              >Refereance variable</a
+            >
+
+            <a class="nav-link active" aria-current="page" routerLink="/product"
+              >@viewChild Refereance Element</a
+            >
+
+            <a class="nav-link active" aria-current="page" routerLink="/product"
+              >@viewChild Refereance Comoonent(todo)</a
+            >
+
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
         </li>
       </ul>
     </div>
