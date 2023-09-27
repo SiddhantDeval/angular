@@ -31,65 +31,46 @@
         </li>
         <li class="nav-item dropdown">
           <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Dropdown
+            class="nav-link btn-secondary dropdown-toggle fw-bold"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Implementations
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              routerLink="/students-report"
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" aria-current="page" routerLink="/"
               >Event binding</a
             >
-
-            <a
-              class="nav-link active"
-              aria-current="page"
-              routerLink="/students-report"
+            <a class="dropdown-item" aria-current="page" routerLink="/"
               >Two way data binding (ngModel)</a
             >
-
-            <a
-              class="nav-link active"
-              aria-current="page"
-              routerLink="/students-report"
+            <a class="dropdown-item" aria-current="page" routerLink="/"
               >Custom event emmiter</a
             >
-
-            <a
-              class="nav-link active"
-              aria-current="page"
-              routerLink="/students-report"
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" aria-current="page" routerLink="/"
               >*ngIf</a
             >
-            <a
-              class="nav-link active"
-              aria-current="page"
-              routerLink="/students-report"
+            <a class="dropdown-item" aria-current="page" routerLink="/"
               >*ngFor</a
             >
-
-            <a class="nav-link active" aria-current="page" routerLink="/product"
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" aria-current="page" routerLink="/products"
               >Refereance variable</a
             >
-
-            <a class="nav-link active" aria-current="page" routerLink="/product"
+            <a class="dropdown-item" aria-current="page" routerLink="/products"
               >@viewChild Refereance Element</a
             >
-
-            <a class="nav-link active" aria-current="page" routerLink="/product"
-              >@viewChild Refereance Comoonent(todo)</a
+            <a class="dropdown-item" aria-current="page" routerLink="/products"
+              >@viewChild Refereance Component(todo)</a
             >
-
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a
+              class="dropdown-item"
+              aria-current="page"
+              routerLink="/registration"
+              >@viewChildren Elements Refereance</a
+            >
           </div>
         </li>
       </ul>
@@ -100,7 +81,6 @@
   [ngStyle]="{
     backgroundImage: 'url(/assets/background.jpg)',
     minHeight: '100vh'
-  }"
->
+  }">
   <router-outlet></router-outlet>
 </div>
