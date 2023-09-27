@@ -1,4 +1,11 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  SimpleChange,
+  SimpleChanges,
+  ViewChild,
+} from '@angular/core';
 import { Product } from '../mock-data';
 
 @Component({
@@ -9,10 +16,14 @@ import { Product } from '../mock-data';
 export class ProductFilterComponent {
   @Input()
   products: Product[];
-
   selectedPrice: any;
   maxPrice: number;
   minPrice: number;
+
+  // Access reference from veiew template via @ViewChild decoretor
+  @ViewChild('filterNamereferance')
+  filterproductbyName: ElementRef<HTMLInputElement>;
+
   ngOnInit() {
     this.maxPrice = Math.max(...this.products.map((p) => p.price));
     this.minPrice = Math.min(...this.products.map((p) => p.price));

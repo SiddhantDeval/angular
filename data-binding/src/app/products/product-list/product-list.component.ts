@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectorRef } from '@angular/core';
 import { Product } from '../mock-data';
+import { ProductFilterComponent } from '../product-filter/product-filter.component';
 
 @Component({
   selector: 'product-list',
@@ -9,5 +10,7 @@ import { Product } from '../mock-data';
 export class ProductListComponent {
   @Input()
   products: Product[];
+  @Input()
+  // viewChild for component, todo ProductFilterComp: ProductFilterComponent;
   selectedProduct: Product;
 }

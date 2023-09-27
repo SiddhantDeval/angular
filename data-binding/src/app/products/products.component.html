@@ -3,9 +3,10 @@
     Products -
     <span class="fw-light">{{ products.length }}</span>
   </p>
-  <product-filter [products]="products" />
+  <product-filter [products]="products" #ProductFilterCompomentReferance />
   <!--ProductListComponentReference -->
   <product-list [products]="products" #ProductListComponentReference />
+  <!-- todo "@ViewChild('ProductListComponentReference')" [ProductFilterComp]="ProductFilterComp" to do-->
   <product-modal
     *ngIf="ProductListComponentReference.selectedProduct"
     [product]="ProductListComponentReference.selectedProduct"
