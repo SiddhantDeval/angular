@@ -18,6 +18,7 @@ export class RegistrationComponent {
     ElementRef<HTMLInputElement>
   >;
   @ViewChild('formElement') formElement: ElementRef<HTMLFormElement>;
+  toggle = false;
 
   getValueFromHtmlInputElement = (element: HTMLInputElement) => {
     let value: string | boolean = element.value;
@@ -30,6 +31,7 @@ export class RegistrationComponent {
       nativeElement.value = '';
   }
   addStudentToList() {
+    this.toggle = !this.toggle;
     this.formElement.nativeElement.classList.add('was-validated');
     let isFormValidate = true;
     let studentDetails: RegistrationStudent = {} as any;

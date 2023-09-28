@@ -120,38 +120,42 @@
       </div>
     </div>
   </div>
-
   <div class="row justify-content-center">
-    <div
-      class="col-lg-6 col-md-12 g-4"
-      *ngFor="let stu of studentList; let i = index">
-      <div class="card">
-        <div class="card-body">
-          <dl class="row">
-            <dt class="col-sm-3">Name</dt>
-            <dd class="col-sm-9">{{ stu.firstName + ' ' + stu.lastName }}</dd>
+    <div *ngTemplateOutlet="cardsRefrance"></div>
+  </div>
+</div>
 
-            <dt class="col-sm-3">Username</dt>
-            <dd class="col-sm-9">
-              <p>{{ stu.email }}</p>
-            </dd>
+<!-- ng-template and ngTemplateOutlet -->
+<ng-template #cardsRefrance>
+  <div
+    class="col-lg-6 col-md-12 g-4"
+    *ngFor="let stu of studentList; let i = index">
+    <div class="card">
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-sm-3">Name</dt>
+          <dd class="col-sm-9">{{ stu.firstName + ' ' + stu.lastName }}</dd>
 
-            <dt class="col-sm-3">City</dt>
-            <dd class="col-sm-9">
-              {{ stu.city }}
-            </dd>
+          <dt class="col-sm-3">Username</dt>
+          <dd class="col-sm-9">
+            <p>{{ stu.email }}</p>
+          </dd>
 
-            <dt class="col-sm-3 text-truncate">State</dt>
-            <dd class="col-sm-9">
-              {{ stu.state }}
-            </dd>
-            <dt class="col-sm-3 text-truncate">Zip code</dt>
-            <dd class="col-sm-9">
-              {{ stu.zip }}
-            </dd>
-          </dl>
-        </div>
+          <dt class="col-sm-3">City</dt>
+          <dd class="col-sm-9">
+            {{ stu.city }}
+          </dd>
+
+          <dt class="col-sm-3 text-truncate">State</dt>
+          <dd class="col-sm-9">
+            {{ stu.state }}
+          </dd>
+          <dt class="col-sm-3 text-truncate">Zip code</dt>
+          <dd class="col-sm-9">
+            {{ stu.zip }}
+          </dd>
+        </dl>
       </div>
     </div>
   </div>
-</div>
+</ng-template>
