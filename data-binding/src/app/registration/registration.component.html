@@ -16,7 +16,7 @@
                 class="form-control"
                 id="validationCustom01"
                 name="firstName"
-                required="" />
+                required />
               <div class="valid-feedback">Looks good!</div>
               <div class="invalid-feedback">Please provide a first name.</div>
             </div>
@@ -30,11 +30,25 @@
                 class="form-control"
                 id="validationCustom02"
                 name="lastName"
-                required="" />
+                required />
               <div class="valid-feedback">Looks good!</div>
               <div class="invalid-feedback">Please provide a first name.</div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
+              <label for="gender" class="form-label">Gender</label>
+              <select
+                #registrationInputs
+                class="form-select"
+                id="gender"
+                name="gender"
+                required>
+                <option selected value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please select a valid state.</div>
+            </div>
+            <div class="col-md-5">
               <label for="validationCustomUsername" class="form-label"
                 >Username</label
               >
@@ -47,11 +61,12 @@
                   id="validationCustomUsername"
                   aria-describedby="inputGroupPrepend"
                   name="email"
-                  required="" />
+                  required />
                 <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Please choose a username.</div>
               </div>
             </div>
+
             <div class="col-md-6">
               <label for="validationCustom03" class="form-label">City</label>
               <input
@@ -60,7 +75,7 @@
                 class="form-control"
                 id="validationCustom03"
                 name="city"
-                required="" />
+                required />
               <div class="valid-feedback">Looks good!</div>
               <div class="invalid-feedback">Please provide a valid city.</div>
             </div>
@@ -71,7 +86,7 @@
                 class="form-select"
                 id="validationCustom04"
                 name="state"
-                required="">
+                required>
                 <option selected value="Uttrakhand">Uttrakhand</option>
                 <option value="Delhi">Delhi</option>
               </select>
@@ -86,7 +101,7 @@
                 class="form-control"
                 id="validationCustom05"
                 name="zip"
-                required="" />
+                required />
               <div class="valid-feedback">Looks good!</div>
               <div class="invalid-feedback">Please provide a valid zip.</div>
             </div>
@@ -99,7 +114,7 @@
                   checked
                   id="invalidCheck"
                   name="agree"
-                  required="" />
+                  required />
                 <label class="form-check-label" for="invalidCheck">
                   Agree to terms and conditions
                 </label>
@@ -140,6 +155,17 @@
           <dd class="col-sm-9">
             <p>{{ stu.email }}</p>
           </dd>
+
+          <dt class="col-sm-3">Gender</dt>
+          <!-- ng-template as TemplateRef  -->
+          <dd
+            class="col-sm-9"
+            *ngIf="stu.gender == 'Male'; else femaleTemplateRef">
+            Male
+          </dd>
+          <ng-template #femaleTemplateRef>
+            <dd class="col-sm-9">Female</dd>
+          </ng-template>
 
           <dt class="col-sm-3">City</dt>
           <dd class="col-sm-9">

@@ -6,5 +6,6 @@ type RegistrationStudent = {
   state: string;
   zip: string;
   agree: boolean;
+  gender: 'Male' | 'Female' | string;
 };
 export { RegistrationStudent };
