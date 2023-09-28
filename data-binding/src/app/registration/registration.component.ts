@@ -1,4 +1,10 @@
-import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { type RegistrationStudent } from '../Modules/Registration';
 
 @Component({
@@ -11,20 +17,32 @@ export class RegistrationComponent {
   @ViewChildren('registrationInputs') registrationInputs: QueryList<
     ElementRef<HTMLInputElement>
   >;
+  @ViewChild('formElement') formElement: ElementRef<HTMLFormElement>;
+
   getValueFromHtmlInputElement = (element: HTMLInputElement) => {
     let value: string | boolean = element.value;
     if (element.type === 'chackbox') value = element.checked;
     return value;
   };
+  handleReset() {
+    this.formElement.nativeElement.classList.remove('was-validated');
+    for (const { nativeElement } of this.registrationInputs)
+      nativeElement.value = '';
+  }
   addStudentToList() {
+    this.formElement.nativeElement.classList.add('was-validated');
+    let isFormValidate = true;
     let studentDetails: RegistrationStudent = {} as any;
-    this.registrationInputs.forEach(InputItem => {
-      const { nativeElement } = InputItem;
+    for (const { nativeElement } of this.registrationInputs) {
+      const isValid = nativeElement.checkValidity();
+      if (!isValid) isFormValidate = isFormValidate && isValid;
       studentDetails = Object.assign(studentDetails, {
         [nativeElement.name]: this.getValueFromHtmlInputElement(nativeElement),
       });
-      nativeElement.value = '';
-    });
-    this.studentList.push(studentDetails);
+    }
+    if (isFormValidate) {
+      this.studentList.push(studentDetails);
+      this.handleReset();
+    }
   }
 }

@@ -1,9 +1,10 @@
 type RegistrationStudent = {
   firstName: string;
   lastName: string;
-  address: string;
+  email: string;
   city: string;
   state: string;
   zip: string;
+  agree: boolean;
 };
 export { RegistrationStudent };

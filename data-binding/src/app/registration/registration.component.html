@@ -5,59 +5,90 @@
         <div class="card-body">
           <p class="h2 text-secondary">Students Registration</p>
           <div [ngStyle]="{ height: '1px' }" class="bg-secondary mb-3"></div>
-          <form class="row g-3">
-            <div class="col-lg-6">
-              <label for="inputEmail4" class="form-label">first name</label>
+          <form class="row g-3 needs-validation" novalidate="" #formElement>
+            <div class="col-md-4">
+              <label for="validationCustom01" class="form-label"
+                >First name</label
+              >
               <input
                 #registrationInputs
                 type="text"
+                class="form-control"
+                id="validationCustom01"
                 name="firstName"
-                class="form-control"
-                id="inputEmail4" />
+                required="" />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please provide a first name.</div>
             </div>
-            <div class="col-lg-6">
-              <label for="inputPassword4" class="form-label">Last name</label>
+            <div class="col-md-4">
+              <label for="validationCustom02" class="form-label"
+                >Last name</label
+              >
               <input
                 #registrationInputs
                 type="text"
+                class="form-control"
+                id="validationCustom02"
                 name="lastName"
-                class="form-control"
-                id="inputPassword4" />
+                required="" />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please provide a first name.</div>
             </div>
-            <div class="col-12">
-              <label for="inputAddress" class="form-label">Address</label>
+            <div class="col-md-4">
+              <label for="validationCustomUsername" class="form-label"
+                >Username</label
+              >
+              <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input
+                  #registrationInputs
+                  type="text"
+                  class="form-control"
+                  id="validationCustomUsername"
+                  aria-describedby="inputGroupPrepend"
+                  name="email"
+                  required="" />
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom03" class="form-label">City</label>
               <input
                 #registrationInputs
                 type="text"
                 class="form-control"
-                id="inputAddress"
-                name="address"
-                placeholder="1234 Main St" />
-            </div>
-            <div class="col-lg-6">
-              <label for="inputCity" class="form-label">City</label>
-              <input
-                #registrationInputs
-                type="text"
-                class="form-control"
+                id="validationCustom03"
                 name="city"
-                id="inputCity" />
+                required="" />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please provide a valid city.</div>
             </div>
-            <div class="col-lg-4">
-              <label for="inputState" class="form-label">State</label>
-              <select id="inputState" class="form-select" name="state">
-                <option selected>Delhi</option>
-                <option>Uttrakhand</option>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">State</label>
+              <select
+                #registrationInputs
+                class="form-select"
+                id="validationCustom04"
+                name="state"
+                required="">
+                <option selected value="Uttrakhand">Uttrakhand</option>
+                <option value="Delhi">Delhi</option>
               </select>
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please select a valid state.</div>
             </div>
-            <div class="col-lg-2">
-              <label for="inputZip" class="form-label">Zip</label>
+            <div class="col-md-3">
+              <label for="validationCustom05" class="form-label">Zip</label>
               <input
                 #registrationInputs
                 type="text"
                 class="form-control"
-                id="inputZip"
-                name="zip" />
+                id="validationCustom05"
+                name="zip"
+                required="" />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please provide a valid zip.</div>
             </div>
             <div class="col-12">
               <div class="form-check">
@@ -65,19 +96,23 @@
                   #registrationInputs
                   class="form-check-input"
                   type="checkbox"
-                  id="gridCheck"
-                  name="agree" />
-                <label class="form-check-label" for="gridCheck"
-                  >I agree with
-                  <a class="text-primary" href="/registration">T&C</a></label
-                >
+                  checked
+                  id="invalidCheck"
+                  name="agree"
+                  required="" />
+                <label class="form-check-label" for="invalidCheck">
+                  Agree to terms and conditions
+                </label>
+                <div class="valid-feedback">Looks good!</div>
+
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
               </div>
             </div>
             <div class="col-12">
-              <button
-                class="btn btn-primary w-100"
-                (click)="addStudentToList()">
-                Submit
+              <button class="btn btn-primary" (click)="addStudentToList()">
+                Submit form
               </button>
             </div>
           </form>
@@ -96,9 +131,9 @@
             <dt class="col-sm-3">Name</dt>
             <dd class="col-sm-9">{{ stu.firstName + ' ' + stu.lastName }}</dd>
 
-            <dt class="col-sm-3">Address</dt>
+            <dt class="col-sm-3">Username</dt>
             <dd class="col-sm-9">
-              <p>{{ stu.address }}</p>
+              <p>{{ stu.email }}</p>
             </dd>
 
             <dt class="col-sm-3">City</dt>
