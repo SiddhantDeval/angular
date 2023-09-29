@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {
+  FaIconLibrary,
+  FontAwesomeModule,
+} from '@fortawesome/angular-fontawesome';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +20,9 @@ import { ProductFilterComponent } from './products/product-filter/product-filter
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductModalComponent } from './products/product-modal/product-modal.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostComponent } from './posts/post/post.component';
+import icons from './icons';
 
 /* 
 import { APP_BASE_HREF } from '@angular/common';
@@ -37,9 +45,15 @@ providers: [{ provide: APP_BASE_HREF, useValue: environment.baseHref }],
     ProductsComponent,
     ProductListComponent,
     RegistrationComponent,
+    PostsComponent,
+    PostComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(...icons);
+  }
+}

@@ -1,0 +1,16 @@
+<div class="container p-5">
+  <p class="h2">
+    Posts -
+    <span class="fw-light h3">{{ posts.length }}</span>
+  </p>
+  <!-- ng-container (like fragments)-->
+  <ng-container class="row" *ngFor="let post of posts">
+    <!-- ng-content (Content projection) -->
+    <post [upVotes]="post.upVotes" [downVotes]="post.downVotes">
+      <p title>{{ post.title }}</p>
+      <p>{{ post.body }}</p>
+      <span tag1>{{ post.tags[0] }}</span>
+      <span tag2>{{ post.tags[1] }}</span>
+    </post>
+  </ng-container>
+</div>
