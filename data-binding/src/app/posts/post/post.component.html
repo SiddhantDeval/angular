@@ -16,49 +16,58 @@
         </h5>
       </div>
       <div class="col-auto">
-        <h6 class="d-inline pe-1">{{ upVotes }}</h6>
-        <h5 class="d-inline pe-2">
-          <button
-            type="button"
-            style="
-              --bs-btn-padding-y: 0.25rem;
-              --bs-btn-padding-x: 0.5rem;
-              --bs-btn-font-size: 0.75rem;
-            "
-            [ngClass]="{
-              btn: true,
-              'btn-outline-success': !isUpVoted,
-              'btn-success': isUpVoted
-            }"
-            [disabled]="isDownVoted"
-            (click)="handleVoteUp()">
-            <fa-icon [icon]="['far', 'thumbs-up']"></fa-icon>
-            vote
-            <ng-container *ngIf="isUpVoted">+1</ng-container>
-          </button>
-        </h5>
-        <h5 class="d-inline pe-1">
-          <button
-            type="button"
-            [ngClass]="{
-              btn: true,
-              'btn-outline-danger': !isDownVoted,
-              'btn-danger': isDownVoted
-            }"
-            style="
-              --bs-btn-padding-y: 0.25rem;
-              --bs-btn-padding-x: 0.5rem;
-              --bs-btn-font-size: 0.75rem;
-            "
-            [disabled]="isUpVoted"
-            (click)="handleVoteDown()">
-            <fa-icon [icon]="['far', 'thumbs-down']"></fa-icon>
-            vote
-            <ng-container *ngIf="isDownVoted">-1</ng-container>
-          </button>
-        </h5>
-        <h6 class="d-inline">{{ downVotes }}</h6>
+        <!-- ng-template & ngTemplateOutlet -->
+        <div *ngTemplateOutlet="VoteUpTemplateRef"></div>
+        <div *ngTemplateOutlet="VoteDownTemplateRef"></div>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #VoteUpTemplateRef>
+  <h6 class="d-inline pe-1">{{ upVotes }}</h6>
+  <h5 class="d-inline pe-2">
+    <button
+      type="button"
+      style="
+        --bs-btn-padding-y: 0.25rem;
+        --bs-btn-padding-x: 0.5rem;
+        --bs-btn-font-size: 0.75rem;
+      "
+      [ngClass]="{
+        btn: true,
+        'btn-outline-success': !isUpVoted,
+        'btn-success': isUpVoted
+      }"
+      [disabled]="isDownVoted"
+      (click)="handleVoteUp()">
+      <fa-icon [icon]="['far', 'thumbs-up']"></fa-icon>
+      vote
+      <ng-container *ngIf="isUpVoted">+1</ng-container>
+    </button>
+  </h5>
+</ng-template>
+
+<ng-template #VoteDownTemplateRef>
+  <h5 class="d-inline pe-1">
+    <button
+      type="button"
+      [ngClass]="{
+        btn: true,
+        'btn-outline-danger': !isDownVoted,
+        'btn-danger': isDownVoted
+      }"
+      style="
+        --bs-btn-padding-y: 0.25rem;
+        --bs-btn-padding-x: 0.5rem;
+        --bs-btn-font-size: 0.75rem;
+      "
+      [disabled]="isUpVoted"
+      (click)="handleVoteDown()">
+      <fa-icon [icon]="['far', 'thumbs-down']"></fa-icon>
+      vote
+      <ng-container *ngIf="isDownVoted">-1</ng-container>
+    </button>
+  </h5>
+  <h6 class="d-inline">{{ downVotes }}</h6>
+</ng-template>
