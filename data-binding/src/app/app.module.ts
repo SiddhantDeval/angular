@@ -23,6 +23,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
 import icons from './icons';
+import { ContentsComponent } from './contents/contents.component';
+// import { ProjectionChildrenComponent } from './contents/projection-children/projection-children.component';
+import { ProjectionChildComponent } from './contents/projection-child/projection-child.component';
 
 /* 
 import { APP_BASE_HREF } from '@angular/common';
@@ -47,6 +50,9 @@ providers: [{ provide: APP_BASE_HREF, useValue: environment.baseHref }],
     RegistrationComponent,
     PostsComponent,
     PostComponent,
+    ContentsComponent,
+    ProjectionChildComponent,
+    // ProjectionChildrenComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
