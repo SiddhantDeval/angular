@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header fw-bold">
+    <div class="row">
+      <div class="col-auto">Content Child</div>
+      <button
+        class="col col-auto btn btn-md py-0"
+        (click)="handleEdit()"
+        *ngIf="!edit; else EditColse">
+        <fa-icon [icon]="['fas', 'pencil']" animation="shake" />
+      </button>
+      <ng-template #EditColse>
+        <button class="col col-auto btn btn-md py-0" (click)="handleEdit()">
+          <fa-icon [icon]="['fas', 'xmark']" />
+        </button>
+      </ng-template>
+    </div>
+  </div>
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+  <ng-container *ngIf="edit">
+    <div class="card-footer">
+      <ng-container *ngFor="let paraContent of parasContent; let i = index">
+        <div class="d-flex justify-content-between align-items-center py-2">
+          <div class="fw-medium">Para {{ i + 1 }}</div>
+          <button
+            *ngIf="i == 0"
+            type="button"
+            class="btn btn-light"
+            (click)="handleSave()">
+            <fa-icon
+              [icon]="['fas', 'check']"
+              size="lg"
+              style="color: #80e04d" />
+          </button>
+        </div>
+        <textarea
+          #InputParasRef
+          class="form-control"
+          [id]="'para' + i"
+          rows="2"
+          [value]="parasContent[i]"></textarea>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>
