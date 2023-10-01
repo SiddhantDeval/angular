@@ -1,6 +1,5 @@
 import {
   Component,
-  ContentChild,
   ContentChildren,
   ElementRef,
   QueryList,
@@ -31,8 +30,9 @@ export class ProjectionChildrenComponent {
   //component as a chlidren
   @ContentChildren(ProjComponentChildrenComponent)
   ComponentsElement: QueryList<ProjComponentChildrenComponent>;
-  ngAfterViewInit() {
+  ngAfterContentInit() {
     console.log(
+      'children -',
       this.ComponentsElement.reduce(
         (p, c) => p + ', ' + c.username,
         'usernames'

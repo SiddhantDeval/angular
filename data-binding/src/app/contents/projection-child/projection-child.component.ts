@@ -4,7 +4,7 @@ import {
   ElementRef,
   AfterContentChecked,
   ViewChild,
-  AfterViewInit,
+  AfterContentInit,
 } from '@angular/core';
 import { ProjComponentChildComponent } from '../contents/proj-component-child/proj-component-child.component';
 
@@ -14,7 +14,7 @@ import { ProjComponentChildComponent } from '../contents/proj-component-child/pr
   styleUrls: ['./projection-child.component.css'],
 })
 export class ProjectionChildComponent
-  implements AfterContentChecked, AfterViewInit
+  implements AfterContentChecked, AfterContentInit
 {
   edit = false;
   paraContent = '';
@@ -29,8 +29,8 @@ export class ProjectionChildComponent
   //component as a chlid
   @ContentChild(ProjComponentChildComponent)
   ComponentElement: ProjComponentChildComponent;
-  ngAfterViewInit() {
-    console.log(this.ComponentElement.username);
+  ngAfterContentInit() {
+    console.log('child -', this.ComponentElement.username);
   }
 
   handleEdit() {
