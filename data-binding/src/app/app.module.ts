@@ -26,6 +26,8 @@ import icons from './icons';
 import { ContentsComponent } from './contents/contents.component';
 import { ProjectionChildrenComponent } from './contents/projection-children/projection-children.component';
 import { ProjectionChildComponent } from './contents/projection-child/projection-child.component';
+import { ProjComponentChildComponent } from './contents/contents/proj-component-child/proj-component-child.component';
+import { ProjComponentChildrenComponent } from './contents/contents/proj-component-children/proj-component-children.component';
 
 /* 
 import { APP_BASE_HREF } from '@angular/common';
@@ -53,6 +55,8 @@ providers: [{ provide: APP_BASE_HREF, useValue: environment.baseHref }],
     ContentsComponent,
     ProjectionChildComponent,
     ProjectionChildrenComponent,
+    ProjComponentChildComponent,
+    ProjComponentChildrenComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],

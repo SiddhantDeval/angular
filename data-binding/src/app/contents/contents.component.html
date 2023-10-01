@@ -1,7 +1,9 @@
 <div class="container p-5">
   <div class="container text-center">
     <div class="row g-4">
+      <!-- child -->
       <div *ngTemplateOutlet="ContentChildRef"></div>
+      <!-- childern -->
       <div *ngTemplateOutlet="ContentChildrenRef"></div>
     </div>
   </div>
@@ -11,6 +13,8 @@
   <div class="col">
     <projection-child>
       <p #para>Edit this content,click on edit icon.</p>
+      <!-- component -->
+      <proj-component-child [username]="'Arpit Gupta'"></proj-component-child>
     </projection-child>
   </div>
 </ng-template>
@@ -27,6 +31,20 @@
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint quam
         neque dolorem asperiores nisi ratione quae perspiciatis.
       </p>
+      <!-- Components -->
+      <proj-component-children
+        [username]="'Arpit Gupta'"
+        component></proj-component-children>
+      <proj-component-children
+        [username]="'Siddhant Deval'"
+        component></proj-component-children>
+      <proj-component-children
+        [username]="'Ravi Kumar'"
+        component></proj-component-children>
     </projection-children>
   </div>
+</ng-template>
+
+<ng-template #ComponentProjectionChildRef>
+  <proj-component-child [username]="'Arpit Gupta'"></proj-component-child>
 </ng-template>

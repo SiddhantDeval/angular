@@ -15,9 +15,21 @@
       </ng-template>
     </div>
   </div>
+
   <div class="card-body">
     <ng-content></ng-content>
+    <div class="card">
+      <div class="card-header fw-bold">
+        <div class="row">
+          <div class="col-auto">Children(Components) as projection</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <ng-content select="[component]"></ng-content>
+      </div>
+    </div>
   </div>
+
   <ng-container *ngIf="edit">
     <div class="card-footer">
       <ng-container *ngFor="let paraContent of parasContent; let i = index">
