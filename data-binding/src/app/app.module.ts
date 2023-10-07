@@ -31,6 +31,7 @@ import { ProjComponentChildrenComponent } from './contents/contents/proj-compone
 import { QuotesComponent } from './quotes/quotes.component';
 //Diractives
 import { TestColor } from './CustomDiractives/quotes.diractive';
+import { CardLift } from './CustomDiractives/cardLift.diractive';
 
 /* 
 import { APP_BASE_HREF } from '@angular/common';
@@ -63,6 +64,7 @@ providers: [{ provide: APP_BASE_HREF, useValue: environment.baseHref }],
     QuotesComponent,
     //Diractives
     TestColor,
+    CardLift,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
