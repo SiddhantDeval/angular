@@ -28,6 +28,9 @@ import { ProjectionChildrenComponent } from './contents/projection-children/proj
 import { ProjectionChildComponent } from './contents/projection-child/projection-child.component';
 import { ProjComponentChildComponent } from './contents/contents/proj-component-child/proj-component-child.component';
 import { ProjComponentChildrenComponent } from './contents/contents/proj-component-children/proj-component-children.component';
+import { QuotesComponent } from './quotes/quotes.component';
+//Diractives
+import { TestColor } from './CustomDiractives/quotes.diractive';
 
 /* 
 import { APP_BASE_HREF } from '@angular/common';
@@ -57,6 +60,9 @@ providers: [{ provide: APP_BASE_HREF, useValue: environment.baseHref }],
     ProjectionChildrenComponent,
     ProjComponentChildComponent,
     ProjComponentChildrenComponent,
+    QuotesComponent,
+    //Diractives
+    TestColor,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
